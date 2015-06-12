@@ -6,7 +6,7 @@
 
 // DEFINES ////////////////////////////////////////////////
 
-// default screen values, these are all overriden by the 
+// default screen values, these are all overriden by the  
 // call to DDraw_Init() and are just here to have something
 // to set the globals to instead of constant values
 #define SCREEN_WIDTH        640  // size of screen
