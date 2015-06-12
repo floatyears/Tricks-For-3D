@@ -82,6 +82,7 @@ int DSound_Set_Freq(int id,int freq);
 int DSound_Set_Pan(int id,int pan);
 
 // directmusic
+/*
 int DMusic_Load_MIDI(char *filename);
 int DMusic_Play(int id);
 int DMusic_Stop(int id);
@@ -90,7 +91,7 @@ int DMusic_Delete_MIDI(int id);
 int DMusic_Delete_All_MIDI(void);
 int DMusic_Status_MIDI(int id);
 int DMusic_Init(void);
-
+*/
 // directmusic
 
 // GLOBALS ////////////////////////////////////////////////

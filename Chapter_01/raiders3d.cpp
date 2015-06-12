@@ -392,11 +392,11 @@ explosion_id = DSound_Load_WAV("exp1.wav");
 laser_id     = DSound_Load_WAV("shocker.wav");
 
 // initialize directmusic
-DMusic_Init();
+//DMusic_Init();
 
 // load and start main music track
-main_track_id = DMusic_Load_MIDI("midifile2.mid");
-DMusic_Play(main_track_id);
+//main_track_id = DMusic_Load_MIDI("midifile2.mid");
+//DMusic_Play(main_track_id);
 
 // add calls to acquire other directinput devices here...
 
@@ -493,8 +493,8 @@ DSound_Stop_All_Sounds();
 DSound_Shutdown();
 
 // directmusic
-DMusic_Delete_All_MIDI();
-DMusic_Shutdown();
+//DMusic_Delete_All_MIDI();
+//DMusic_Shutdown();
 
 // shut down directinput
 DInput_Shutdown();
@@ -1031,8 +1031,8 @@ if (game_state==GAME_OVER)
     Draw_Text_GDI("G A M E  O V E R", WINDOW_WIDTH/2-8*10,WINDOW_HEIGHT/2,RGB(255,255,255), lpddsback);
 
 // check if the music has finished, if so restart
-if (DMusic_Status_MIDI(main_track_id)==MIDI_STOPPED)
-    DMusic_Play(main_track_id);
+//if (DMusic_Status_MIDI(main_track_id)==MIDI_STOPPED)
+//    DMusic_Play(main_track_id);
 
 // flip the surfaces
 DDraw_Flip();
