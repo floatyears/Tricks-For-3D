@@ -1,5 +1,5 @@
 
-Opening Error Output File (error.txt) on Fri Jun 12 16:20:04.218, 2015
+Opening Error Output File (error.txt) on Fri Jun 12 17:48:55.804, 2015
 
 
 pixel format = 32

@@ -22,6 +22,9 @@
     <Filter Include="源文件\Chapter_01">
       <UniqueIdentifier>{441c276d-1df8-4cd1-98af-89257f13d25e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Practice">
+      <UniqueIdentifier>{0c4c3ab8-96e5-400f-99df-08fbd81b29fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chapter_01\t3dlib1.h">
@@ -46,6 +49,9 @@
     </ClCompile>
     <ClCompile Include="Chapter_01\raiders3d.cpp">
       <Filter>源文件\Chapter_01</Filter>
+    </ClCompile>
+    <ClCompile Include="win_main.cpp">
+      <Filter>源文件\Practice</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-﻿生成启动时间为 2015/6/12 16:20:02。
+﻿生成启动时间为 2015/6/12 17:46:45。
      1>项目“E:\Program\Tricks-For-3D\Tricks For 3D.vcxproj”在节点 2 上(Build 个目标)。
      1>Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Program\Tricks-For-3D\Debug\Tricks For 3D.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86" d3d9.lib d3dx10d.lib d3dx9d.lib dxerr.lib dxguid.lib winmm.lib comctl32.lib ddraw.lib dsound.lib dinput8.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Program\Tricks-For-3D\Debug\Tricks For 3D.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Program\Tricks-For-3D\Debug\Tricks For 3D.lib" /MACHINE:X86 Debug\raiders3d.obj
@@ -10,4 +10,4 @@
 
 生成成功。
 
-已用时间 00:00:00.40
+已用时间 00:00:00.71
