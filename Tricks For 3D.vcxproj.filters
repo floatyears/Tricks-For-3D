@@ -16,42 +16,57 @@
     <Filter Include="资源文件\Chapter_01">
       <UniqueIdentifier>{c3fe10df-15fc-47e9-bb15-59eefc4b0eb4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\Chapter_01">
-      <UniqueIdentifier>{7dba8387-de75-4f79-afc0-183d1f6433fd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Chapter_01">
-      <UniqueIdentifier>{441c276d-1df8-4cd1-98af-89257f13d25e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\Practice">
       <UniqueIdentifier>{0c4c3ab8-96e5-400f-99df-08fbd81b29fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ExRender">
+      <UniqueIdentifier>{ce2587a8-b93d-4011-af55-554d7f5e3ab1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ExRender">
+      <UniqueIdentifier>{fe5dcae5-f440-4d5d-998c-64c491c1d216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\source">
+      <UniqueIdentifier>{441c276d-1df8-4cd1-98af-89257f13d25e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\source">
+      <UniqueIdentifier>{7dba8387-de75-4f79-afc0-183d1f6433fd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chapter_01\t3dlib1.h">
-      <Filter>头文件\Chapter_01</Filter>
+      <Filter>头文件\source</Filter>
     </ClInclude>
     <ClInclude Include="Chapter_01\t3dlib2.h">
-      <Filter>头文件\Chapter_01</Filter>
+      <Filter>头文件\source</Filter>
     </ClInclude>
     <ClInclude Include="Chapter_01\t3dlib3.h">
-      <Filter>头文件\Chapter_01</Filter>
+      <Filter>头文件\source</Filter>
+    </ClInclude>
+    <ClInclude Include="poly.h">
+      <Filter>头文件\ExRender</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件\ExRender</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chapter_01\t3dlib1.cpp">
-      <Filter>源文件\Chapter_01</Filter>
+      <Filter>源文件\source</Filter>
     </ClCompile>
     <ClCompile Include="Chapter_01\t3dlib2.cpp">
-      <Filter>源文件\Chapter_01</Filter>
+      <Filter>源文件\source</Filter>
     </ClCompile>
     <ClCompile Include="Chapter_01\t3dlib3.cpp">
-      <Filter>源文件\Chapter_01</Filter>
+      <Filter>源文件\source</Filter>
     </ClCompile>
     <ClCompile Include="Chapter_01\raiders3d.cpp">
-      <Filter>源文件\Chapter_01</Filter>
+      <Filter>源文件\source</Filter>
     </ClCompile>
     <ClCompile Include="win_main.cpp">
       <Filter>源文件\Practice</Filter>
+    </ClCompile>
+    <ClCompile Include="resource.cpp">
+      <Filter>源文件\ExRender</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

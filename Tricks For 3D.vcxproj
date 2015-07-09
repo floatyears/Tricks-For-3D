@@ -14,12 +14,15 @@
     <ClInclude Include="Chapter_01\t3dlib1.h" />
     <ClInclude Include="Chapter_01\t3dlib2.h" />
     <ClInclude Include="Chapter_01\t3dlib3.h" />
+    <ClInclude Include="poly.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chapter_01\raiders3d.cpp" />
     <ClCompile Include="Chapter_01\t3dlib1.cpp" />
     <ClCompile Include="Chapter_01\t3dlib2.cpp" />
     <ClCompile Include="Chapter_01\t3dlib3.cpp" />
+    <ClCompile Include="resource.cpp" />
     <ClCompile Include="win_main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
