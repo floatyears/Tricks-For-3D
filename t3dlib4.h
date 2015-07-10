@@ -1,5 +1,5 @@
 // T3DLIB4.H - Header file for T3DLIB4.CPP game engine library
-
+#include <memory>
 // watch for multiple inclusions
 #ifndef T3DLIB4
 #define T3DLIB4

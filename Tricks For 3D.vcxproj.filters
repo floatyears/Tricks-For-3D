@@ -48,6 +48,12 @@
     <ClInclude Include="resource.h">
       <Filter>头文件\ExRender</Filter>
     </ClInclude>
+    <ClInclude Include="t3dlib4.h">
+      <Filter>头文件\source</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>头文件\ExRender</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chapter_01\t3dlib1.cpp">
@@ -66,6 +72,15 @@
       <Filter>源文件\Practice</Filter>
     </ClCompile>
     <ClCompile Include="resource.cpp">
+      <Filter>源文件\ExRender</Filter>
+    </ClCompile>
+    <ClCompile Include="t3dlib4.cpp">
+      <Filter>源文件\source</Filter>
+    </ClCompile>
+    <ClCompile Include="poly.cpp">
+      <Filter>源文件\ExRender</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
       <Filter>源文件\ExRender</Filter>
     </ClCompile>
   </ItemGroup>

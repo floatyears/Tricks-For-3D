@@ -109,3 +109,76 @@ void Transform_OBJECT4DV1(OBJECT4DV1_PTR obj,
 		VECTOR4D_COPY(&obj->uz, &vresult);
 	}
 }
+
+void Model_To_World_OBJECT4DV1(OBJECT4DV1_PTR obj, int coord_select = TRANSFORM_LOCAL_TO_TRANS)
+{
+	//这里没有用矩阵，直接用传递进来的物体的局部/模型坐标变换为世界坐标，结果被存储在变换后的顶点列表中
+	if (coord_select == TRANSFORM_LOCAL_TO_TRANS)
+	{
+		//对顶点进行平移
+		for (int vertex = 0; vertex < obj->num_vertices; vertex++)
+		{
+			VECTOR4D_Add(&obj->vlist_local[vertex], &obj->world_pos, &obj->vlist_trans[vertex]);
+		}
+	}
+	else //trans only
+	{
+		for (int vertex = 0; vertex < obj->num_vertices; vertex++)
+		{
+			VECTOR4D_Add(&obj->vlist_trans[vertex], &obj->world_pos, &obj->vlist_trans[vertex]);
+		}
+	}
+}
+
+void Build_Model_To_World_MATRIX4X4(VECTOR4D_PTR vpos, MATRIX4X4_PTR m)
+{
+	//创建局部坐标到世界坐标变换矩阵
+	Mat_Init_4X4(m, 1, 0, 0, 0,
+		0, 1, 0, 0,
+		0, 0, 1, 0,
+		vpos->x, vpos->y, vpos->z, 1);
+}
+
+void Model_To_World_RENDERLIST4DV1(RENDERLIST4DV1_PTR render_list, VECTOR4D_PTR world_pos, int coord_select = TRANSFORM_LOCAL_TO_TRANS)
+{
+	if (coord_select == TRANSFORM_LOCAL_TO_TRANS)
+	{
+		for (int poly = 0; poly < render_list->num_polys; poly++)
+		{
+			POLYF4DV1_PTR curr_poly = render_list->poly_ptrs[poly];
+			if (curr_poly == NULL || !(curr_poly->state == POLY4DV1_STATE_ACTIVE) || curr_poly->state == POLY4DV1_STATE_CLIPPED || curr_poly->state == POLY4DV1_STATE_BACKFACE)
+			{
+				continue;
+			}
+
+			for (int vertex = 0; vertex < 3; vertex++)
+			{
+				VECTOR4D_Add(&curr_poly->vlist[vertex], world_pos, &curr_poly->tvlist[vertex]);
+			}
+		}
+	}
+	else // trans only
+	{
+		for (int poly = 0; poly < render_list->num_polys; poly++)
+		{
+			POLYF4DV1_PTR curr_poly = render_list->poly_ptrs[poly];
+			if (curr_poly == NULL || !(curr_poly->state == POLY4DV1_STATE_ACTIVE) || curr_poly->state == POLY4DV1_STATE_CLIPPED || curr_poly->state == POLY4DV1_STATE_BACKFACE)
+			{
+				continue;
+			}
+
+			for (int vertex = 0; vertex < 3; vertex++)
+			{
+				VECTOR4D_Add(&curr_poly->tvlist[vertex], world_pos, &curr_poly->tvlist[vertex]);
+			}
+		}
+	}
+}
+
+void Build_Model_To_World_RENDERLIST4DV1(VECTOR4D_PTR vpos, MATRIX4X4_PTR m)
+{
+	Mat_Init_4X4(m, 1, 0, 0, 0,
+		0, 1, 0, 0,
+		0, 0, 1, 0,
+		vpos->x, vpos->y, vpos->z, 1);
+}
