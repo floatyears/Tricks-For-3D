@@ -20,6 +20,8 @@
 
 // TYPES //////////////////////////////////////////////////
 
+#define PI 3.1415926
+
 // 2x2 matrix /////////////////////////////////////////////
 typedef struct MATRIX2X2_TYP
 {
@@ -442,6 +444,12 @@ inline void POINT3D_COPY(POINT3D_PTR vdst, POINT3D_PTR vsrc)
 inline void POINT4D_COPY(POINT4D_PTR vdst, POINT4D_PTR vsrc) 
 {(vdst)->x = (vsrc)->x; (vdst)->y = (vsrc)->y;  
 (vdst)->z = (vsrc)->z; (vdst)->w = (vsrc)->w;  }
+
+inline void POINT4D_ZERO(POINT4D_PTR vdst)
+{
+	(vdst)->x = 0.0; (vdst)->y = 0.0;
+	(vdst)->z = 0.0; (vdst)->w = 0.0;
+}
 
 // quaternion macros
 inline void QUAT_ZERO(QUAT_PTR q) 

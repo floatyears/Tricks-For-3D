@@ -1,7 +1,16 @@
 #define CAM_MODEL_ELUER		1
 #define CAM_MODEL_UVN		2
 
+#define CAM_ROT_SEQ_XYZ		0
+#define CAM_ROT_SEQ_YXZ		1
+#define CAM_ROT_SEQ_XZY		2
+#define CAM_ROT_SEQ_YZX		3
+#define CAM_ROT_SEQ_ZYX		4
+#define CAM_ROT_SEQ_ZXY		5
+
+
 #include "t3dlib4.h"
+#include "poly.h"
 
 typedef struct CAM4DV1_TYP{
 	int state;					//相机状态
@@ -13,13 +22,15 @@ typedef struct CAM4DV1_TYP{
 	VECTOR4D n;
 	POINT4D  target;			//UVN模型的目标向量
 
-	float view_dist_h;			//水平视距和垂直视距
-	float view_dist_v;
+	float view_dist;			//视距
 
 	float fov;					//水平方向和垂直方向的视野
 
 	float near_clip_z;			//近裁剪平面
 	float far_clip_z;			//远裁剪平面
+
+	float viewplane_width;
+	float viewplane_height;
 
 	PLANE3D rt_clip_plane;		//右裁剪平面
 	PLANE3D lt_clip_plane;		//左裁剪平面
