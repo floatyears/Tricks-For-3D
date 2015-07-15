@@ -52,6 +52,8 @@
 #define POLY4DV1_STATE_CLIPPED		0x0008
 
 #define OBJECT4DV1_STATE_ACTIVE			0x0001
+#define OBJECT4DV1_STATE_VISIBLE		0x0002
+#define OBJECT4DV1_STATE_CULLED			0x0004
 
 #define RENDERLIST4DV1_MAX_POLYS 256
 
@@ -60,21 +62,21 @@
 #define TRANSFORM_TRANS_ONLY		2
 #define TRANSFORM_LOCAL_TO_TRANS	3
 
-typedef struct POINT4D_TYP
-{
-	int x;
-	int y;
-	int z;
-	int w;
-} POINT4D, *POINT4D_PTR;
+//typedef struct POINT4D_TYP
+//{
+//	int x;
+//	int y;
+//	int z;
+//	int w;
+//} POINT4D, *POINT4D_PTR;
 
-typedef struct VECTOR4D_TYP
-{
-	int x;
-	int y;
-	int z;
-	int w;
-} VECTOR4D, *VECTOR4D_PTR;
+//typedef struct VECTOR4D_TYP
+//{
+//	int x;
+//	int y;
+//	int z;
+//	int w;
+//} VECTOR4D, *VECTOR4D_PTR;
 
 //基于顶点列表的多边形
 typedef struct POLY4DV1_TYP

@@ -8,6 +8,11 @@
 #define CAM_ROT_SEQ_ZYX		4
 #define CAM_ROT_SEQ_ZXY		5
 
+#define UVN_MODE_SPHERICAL	1
+
+#define CULL_OBJECT_Z_PLANE  0x0001
+#define CULL_OBJECT_X_PLANE  0x0002
+#define CULL_OBJECT_Y_PLANE  0x0004
 
 #include "t3dlib4.h"
 #include "poly.h"
@@ -22,6 +27,8 @@ typedef struct CAM4DV1_TYP{
 	VECTOR4D n;
 	POINT4D  target;			//UVN模型的目标向量
 
+	float view_dist_h;
+	float view_dist_v;
 	float view_dist;			//视距
 
 	float fov;					//水平方向和垂直方向的视野
