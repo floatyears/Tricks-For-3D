@@ -15,6 +15,7 @@
     <ClInclude Include="Chapter_01\t3dlib1.h" />
     <ClInclude Include="Chapter_01\t3dlib2.h" />
     <ClInclude Include="Chapter_01\t3dlib3.h" />
+    <ClInclude Include="light.h" />
     <ClInclude Include="poly.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="t3dlib4.h" />
@@ -25,6 +26,7 @@
     <ClCompile Include="Chapter_01\t3dlib1.cpp" />
     <ClCompile Include="Chapter_01\t3dlib2.cpp" />
     <ClCompile Include="Chapter_01\t3dlib3.cpp" />
+    <ClCompile Include="light.cpp" />
     <ClCompile Include="poly.cpp" />
     <ClCompile Include="resource.cpp" />
     <ClCompile Include="t3dlib4.cpp" />
