@@ -30,7 +30,7 @@ typedef struct RGBAV1_TYP
 		UCHAR rgba_M[4];		//数组格式
 		struct					//显式名称格式
 		{
-			UCHAR a, b, g, r;
+			UCHAR a, b, g, r;                                                             
 		};
 	};
 } RGBAV1, *RGBAV1_PTR;
@@ -63,6 +63,8 @@ typedef	struct MATV1_TYP
 	BITMAP_IMAGE texture;		//纹理图
 } MATV1, *MATV1_PTR;
 
+MATV1 materials[MAX_MATERIALS]; //系统中的材质
+int num_materials;				//当前的材质数
 
 //有关广元的常量
 #define LIGHTV1_ATTR_AMBIENT			0x0001
@@ -93,3 +95,6 @@ typedef	struct LIGHTV1_TYP
 
 	float pf;
 } LIGHTV1, *LIGHT_PTR;
+
+LIGHTV1 lights[MAX_LIGHTS]; //光源数组
+int num_lights;				//当前的光源数
