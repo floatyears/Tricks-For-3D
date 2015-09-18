@@ -54,6 +54,9 @@
     <ClInclude Include="camera.h">
       <Filter>头文件\ExRender</Filter>
     </ClInclude>
+    <ClInclude Include="light.h">
+      <Filter>头文件\ExRender</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chapter_01\t3dlib1.cpp">
@@ -81,6 +84,9 @@
       <Filter>源文件\ExRender</Filter>
     </ClCompile>
     <ClCompile Include="camera.cpp">
+      <Filter>源文件\ExRender</Filter>
+    </ClCompile>
+    <ClCompile Include="light.cpp">
       <Filter>源文件\ExRender</Filter>
     </ClCompile>
   </ItemGroup>

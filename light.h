@@ -1,5 +1,7 @@
 #include "poly.h"
+#include "camera.h"
 #include "t3dlib4.h"
+#include <Windows.h>
 
 typedef unsigned char  UCHAR;
 
@@ -21,6 +23,9 @@ typedef unsigned char  UCHAR;
 #define MATV1_STATE_ACTIVE						0x0001
 
 #define MAX_MATERIALS							256
+
+#define	DD_PIXEL_FORMAT565						1
+#define	DD_PIXEL_FORMAT555						2
 
 typedef struct RGBAV1_TYP
 {
@@ -66,7 +71,7 @@ typedef	struct MATV1_TYP
 MATV1 materials[MAX_MATERIALS]; //系统中的材质
 int num_materials;				//当前的材质数
 
-//有关广元的常量
+//有关光源的常量
 #define LIGHTV1_ATTR_AMBIENT			0x0001
 #define LIGHTV1_ATTR_INFINITE			0x0002
 #define LIGHTV1_ATTR_POINT				0x0004
@@ -94,7 +99,7 @@ typedef	struct LIGHTV1_TYP
 	float spot_outer;	//聚光灯外锥角
 
 	float pf;
-} LIGHTV1, *LIGHT_PTR;
+} LIGHTV1, *LIGHTV1_PTR;
 
 LIGHTV1 lights[MAX_LIGHTS]; //光源数组
 int num_lights;				//当前的光源数

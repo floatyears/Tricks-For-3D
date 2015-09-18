@@ -4,6 +4,12 @@
 // this builds a 16 bit color value in 5.6.5 format (green dominate mode)
 #define _RGB16BIT565(r,g,b) ((b & 31) + ((g & 63) << 5) + ((r & 31) << 11))
 
+// this builds a 16 bit color value in 5.6.5 format (green dominate mode)
+#define _RGB565FORMAT16BIT(color,r,g,b) {*r = color >> 11;*g = (color >> 5) & 31; *b = color & 31;}
+
+// this builds a 16 bit color value in 5.6.5 format (green dominate mode)
+#define _RGB555FORMAT16BIT(color,r,g,b) {*r = color >> 10;*g = (color >> 5) & 31; *b = color & 31;}
+
 // this builds a 24 bit color value in 8.8.8 format 
 #define _RGB24BIT(a,r,g,b) ((b) + ((g) << 8) + ((r) << 16) )
 
@@ -93,7 +99,7 @@ typedef struct POLYF4DV1_TYP
 {
 	int state;
 	int attr;
-	int color;
+	int color;		   //多边形的颜色
 	
 	POINT4D vlist[3];  //三角形顶点
 	POINT4D tvlist[3]; //变换后的三角形定点

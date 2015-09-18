@@ -182,3 +182,64 @@ void Build_Model_To_World_RENDERLIST4DV1(VECTOR4D_PTR vpos, MATRIX4X4_PTR m)
 		0, 0, 1, 0,
 		vpos->x, vpos->y, vpos->z, 1);
 }
+
+int Insert_POLY4DV1_RENDERLIST4DV1(RENDERLIST4DV1_PTR render_list, POLY4DV1_PTR obj)
+{
+	return -1;
+}
+
+int Insert_OBJECT4DV1_RENDERLIST4DV2(RENDERLIST4DV1_PTR render_list,
+	OBJECT4DV1_PTR obj,
+	int insert_local = 0,
+	int lighting_on = 0)
+{
+	if (!(obj->state & OBJECT4DV1_STATE_ACTIVE) || (obj->state & OBJECT4DV1_STATE_CULLED) || !(obj->state & OBJECT4DV1_STATE_VISIBLE))
+		return 0;
+
+	for (int poly = 0; poly < obj->num_polys; poly++)
+	{
+		POLY4DV1_PTR curr_poly = &obj->plist[poly];
+
+		//多边形是否可见
+		if (!(curr_poly->state || POLY4DV1_STATE_ACTIVE) || (curr_poly->state & POLY4DV1_STATE_CLIPPED) || (curr_poly->state & POLY4DV1_STATE_BACKFACE))
+		{
+			continue;
+		}
+
+		//如果要使用局部坐标，则改变多边形指向的顶点列表
+		//首先保存原来的指针
+		POINT4D_PTR vlist_old = curr_poly->vlist;
+		if (insert_local)
+			curr_poly->vlist = obj->vlist_local;
+		else
+		{
+			curr_poly->vlist = obj->vlist_trans;
+		}
+
+		unsigned int base_color = 0;
+		//判断是否需要前16位中的颜色来覆盖原来的颜色
+		if (lighting_on)
+		{
+			base_color = (unsigned int)(curr_poly->color);
+			curr_poly->color = (int)(base_color >> 16);
+		}
+
+		if (!Insert_POLY4DV1_RENDERLIST4DV1(render_list, curr_poly))
+		{
+			//恢复顶点列表指针
+			curr_poly->vlist = vlist_old;
+
+			//插入失败
+			return 0;
+		}
+
+		if (lighting_on)
+		{
+			//恢复颜色
+			curr_poly->color = (int)base_color;
+		}
+		//恢复顶点列表指针
+		curr_poly->vlist = vlist_old;
+	}
+	return 1;
+}
