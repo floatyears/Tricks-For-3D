@@ -68,6 +68,10 @@
 #define TRANSFORM_TRANS_ONLY		2
 #define TRANSFORM_LOCAL_TO_TRANS	3
 
+#define	 SORT_POLYLIST_AVGZ			1
+#define	 SORT_POLYLIST_NEARZ		2
+#define	 SORT_POLYLIST_FARZ			3
+
 //typedef struct POINT4D_TYP
 //{
 //	int x;
